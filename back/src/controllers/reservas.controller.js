@@ -58,7 +58,13 @@ const crearReserva = async (req, res) => {
 
 const registrarPago = async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = Number(req.params.id);
+
+    if (isNaN(id)) {
+      return res.status(400).json({
+        mensaje: "El id de la reserva no es válido"
+      });
+    }
 
     await poolConnect;
 
@@ -94,4 +100,3 @@ module.exports = {
   crearReserva,
   registrarPago
 };
-

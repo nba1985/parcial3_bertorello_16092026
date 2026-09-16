@@ -1,11 +1,11 @@
-require("dotenv").config({ path: require("path").join(__dirname, "../../.env") });
+require("dotenv").config({ path: require("path").join(__dirname, ".env") });
 
 const express = require("express");
 const cors = require("cors");
 
-const canchasRoutes = require("./routes/canchas.routes");
-const reservasRoutes = require("./routes/reservas.routes");
-const reportesRoutes = require("./routes/reportes.routes");
+const canchasRoutes = require("./src/routes/canchas.routes");
+const reservasRoutes = require("./src/routes/reservas.routes");
+const reportesRoutes = require("./src/routes/reportes.routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
